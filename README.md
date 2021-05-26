@@ -1,6 +1,6 @@
 # Takealot Better Reviews
 
-###Reference Documentation
+### Reference Documentation
 * [Official Gradle documentation](https://docs.gradle.org)
 * [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.0/gradle-plugin/reference/html/)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.0/reference/htmlsingle/#boot-features-developing-web-applications)
@@ -15,7 +15,7 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
 
-###Setting up
+### Setting up
 Navigate to the root of the folder and execute using cmd
 
 `gradlew clean build`
@@ -28,11 +28,11 @@ Next run
 
 This will kick off your server.
 
-###Alternate
+### Alternate
 Import project into IDE of choice
 
 Run `MainApplication.java` as a java appication.
 
-###To test locally
+### To test locally
 `http://localhost:8081/tbr/swagger-ui.html`
 
