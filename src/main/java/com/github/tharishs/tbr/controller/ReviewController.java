@@ -28,9 +28,9 @@ class ReviewController {
 
 
     @GetMapping(value = "/get/reviews", produces = MediaType.APPLICATION_JSON_VALUE)
-    @Operation(summary = "Retrieves all reviews from a given takealot url that includes a PLID")
-    public ResponseEntity<ReviewResponse> getReviews(@RequestParam String plid) throws ServiceException, IntegrationException {
+    @Operation(summary = "Retrieves all reviews from a given takealot product url that includes a PLID")
+    public ResponseEntity<ReviewResponse> getReviews(@RequestParam String takealotUrl) throws ServiceException, IntegrationException {
 
-        return ResponseEntity.ok(reviewService.getReviews(plid));
+        return ResponseEntity.ok(reviewService.getReviews(takealotUrl));
     }
 }
