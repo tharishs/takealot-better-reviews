@@ -1,0 +1,23 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /tbr
+spring:
+  application:
+    description: Takealot Better Reviews
+    name: takealot-better-reviews
+springdoc:
+  show-actuator: true
+web-client:
+  read-timeout: 10
+  write-timeout: 10
+  milli-second-timeout: 30000
+  truststore:
+    path: classpath:keys/key.jks
+    protocol: TLSv1.2
+    s3cret: password
+    type: JKS
+integration:
+    takealot-base-url: https://api.takealot.com/rest/v-1-10-0/
+    takealot-review-uri-part: product-details/{plid}/reviews
+
