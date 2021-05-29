@@ -4,6 +4,7 @@ import com.github.tharishs.tbr.exception.IntegrationException;
 import com.github.tharishs.tbr.exception.ServiceException;
 import com.github.tharishs.tbr.model.review.ReviewResponse;
 import com.github.tharishs.tbr.service.ReviewService;
+import com.github.tharishs.tbr.util.StringUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,17 @@ class ReviewController {
     }
 
 
-    @GetMapping(value = "/get/reviews", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get/all", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Retrieves all reviews from a given takealot product url that includes a PLID")
-    public ResponseEntity<ReviewResponse> getReviews(@RequestParam String takealotUrl) throws ServiceException, IntegrationException {
+    public ResponseEntity<ReviewResponse> getAllReviews(@RequestParam String takealotUrl) throws ServiceException, IntegrationException {
+        String plid = StringUtil.extractPlid(takealotUrl);
+        return ResponseEntity.ok(reviewService.getReviews(plid));
+    }
 
-        return ResponseEntity.ok(reviewService.getReviews(takealotUrl));
+    @GetMapping(value = "/get/all/filter/star", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Retrieves all reviews filtered by star rating from a given takealot product url that includes a PLID")
+    public ResponseEntity<ReviewResponse> getFilteredReviewsByStar(@RequestParam String takealotUrl, @RequestParam Integer starRating) throws ServiceException, IntegrationException {
+        String plid = StringUtil.extractPlid(takealotUrl);
+        return ResponseEntity.ok(reviewService.filterReview(plid, starRating));
     }
 }

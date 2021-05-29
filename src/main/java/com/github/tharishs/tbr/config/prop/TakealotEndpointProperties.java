@@ -13,4 +13,5 @@ public class TakealotEndpointProperties {
 
     String takealotBaseUrl;
     String takealotReviewUriPart;
+    String takealotProdDetailUriPart;
 }

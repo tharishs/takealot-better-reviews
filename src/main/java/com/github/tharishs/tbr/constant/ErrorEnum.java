@@ -5,12 +5,13 @@ public enum ErrorEnum {
     UNDEFINED(-1, "An undefined error occurred"),
     INVALID_URL(100, "The URL provided is invalid"),
     INVALID_PLID(101, "The PLID provided is invalid"),
-    INTEGRATION_FAILED_ACCESS(102, "Failed to connect to URL"),
-    INTEGRATION_NO_CONTENT(103, "No content received from the requested resource"),
-    INTEGRATION_FORBIDDEN(104, "Forbidden access to the requested resource"),
-    INTEGRATION_NOT_FOUND(105, "The requested resource was not found"),
-    INTEGRATION_UNAUTHORIZED(106, "Unauthorized access to the requested resource"),
-    INTEGRATION_UNDEFINED_ERROR(107, "The requested resource gave an undefined error");
+    INVALID_STAR(102, "The star rating must be between 1 and 5"),
+    INTEGRATION_FAILED_ACCESS(201, "Failed to connect to URL"),
+    INTEGRATION_NO_CONTENT(202, "No content received from the requested resource"),
+    INTEGRATION_FORBIDDEN(203, "Forbidden access to the requested resource"),
+    INTEGRATION_NOT_FOUND(204, "The requested resource was not found"),
+    INTEGRATION_UNAUTHORIZED(205, "Unauthorized access to the requested resource"),
+    INTEGRATION_UNDEFINED_ERROR(206, "The requested resource gave an undefined error");
 
     private final int errorCode;
     private final String errorDescription;
