@@ -1,27 +1,24 @@
-
 package com.github.tharishs.tbr.model.detail;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * @author Tharish Sooruth
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "seller_id",
-    "display_name",
-    "fulfilled_by_takealot",
-    "link_data"
+        "seller_id",
+        "display_name",
+        "fulfilled_by_takealot",
+        "link_data"
 })
 @Generated("jsonschema2pojo")
-public class Seller implements Serializable
-{
+public class Seller implements Serializable {
 
     @JsonProperty("seller_id")
     public Integer sellerId;

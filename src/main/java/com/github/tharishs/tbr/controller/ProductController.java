@@ -18,11 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Tharish Sooruth
+ */
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping(value = "api/product/v1", produces = MediaType.APPLICATION_JSON_VALUE)
-class ProductController {
+@RequestMapping(value = "api/product/v1", produces = MediaType.APPLICATION_JSON_VALUE)class ProductController {
 
     private final ProductService productService;
 

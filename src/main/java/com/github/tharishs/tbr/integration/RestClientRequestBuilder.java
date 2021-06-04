@@ -11,6 +11,9 @@ import org.springframework.web.util.UriBuilder;
 import java.net.URI;
 import java.util.function.Function;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Builder
 @Getter
 public class RestClientRequestBuilder {

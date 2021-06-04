@@ -6,6 +6,9 @@ import lombok.Getter;
 
 import java.io.Serializable;
 
+/**
+ * @author Tharish Sooruth
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 public class ProductDetails implements Serializable {

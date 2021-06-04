@@ -2,6 +2,9 @@ package com.github.tharishs.tbr.exception;
 
 import com.github.tharishs.tbr.constant.ErrorEnum;
 
+/**
+ * @author Tharish Sooruth
+ */
 public class BaseException extends Exception {
 
     private final ErrorEnum errorEnum;

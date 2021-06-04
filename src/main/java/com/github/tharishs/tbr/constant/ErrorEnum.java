@@ -6,6 +6,7 @@ public enum ErrorEnum {
     INVALID_URL(100, "The URL provided is invalid"),
     INVALID_PLID(101, "The PLID provided is invalid"),
     INVALID_STAR(102, "The star rating must be between 1 and 5"),
+    NO_SEARCH_RESULTS(103, "The provided search result returned no results"),
     INTEGRATION_FAILED_ACCESS(201, "Failed to connect to URL"),
     INTEGRATION_NO_CONTENT(202, "No content received from the requested resource"),
     INTEGRATION_FORBIDDEN(203, "Forbidden access to the requested resource"),

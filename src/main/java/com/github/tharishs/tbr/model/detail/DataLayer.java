@@ -1,37 +1,33 @@
-
 package com.github.tharishs.tbr.model.detail;
+
+import com.fasterxml.jackson.annotation.*;
+import lombok.Getter;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.Getter;
 
+/**
+ * @author Tharish Sooruth
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "name",
-    "sku",
-    "event",
-    "quantity",
-    "categoryname",
-    "totalPrice",
-    "productlineSku",
-    "departmentname",
-    "departmentid",
-    "pageType",
-    "categoryid",
-    "prodid"
+        "name",
+        "sku",
+        "event",
+        "quantity",
+        "categoryname",
+        "totalPrice",
+        "productlineSku",
+        "departmentname",
+        "departmentid",
+        "pageType",
+        "categoryid",
+        "prodid"
 })
 @Getter
-public class DataLayer implements Serializable
-{
+public class DataLayer implements Serializable {
 
     @JsonProperty("name")
     public String name;
@@ -58,7 +54,7 @@ public class DataLayer implements Serializable
     @JsonProperty("prodid")
     public String prodid;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private final Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = 6611142077237987341L;
 
     @JsonAnyGetter

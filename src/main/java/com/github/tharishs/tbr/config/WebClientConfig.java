@@ -22,6 +22,9 @@ import reactor.netty.http.client.HttpClient;
 import javax.net.ssl.KeyManagerFactory;
 import java.security.KeyStore;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Configuration
 @Slf4j
 public class WebClientConfig {

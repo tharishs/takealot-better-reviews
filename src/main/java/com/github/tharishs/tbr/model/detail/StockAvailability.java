@@ -1,33 +1,30 @@
-
 package com.github.tharishs.tbr.model.detail;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * @author Tharish Sooruth
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "status",
-    "is_leadtime",
-    "is_imported",
-    "distribution_centres",
-    "when_do_i_get_it_text",
-    "when_do_i_get_it_info",
-    "display_seasonal_message",
-    "seasonal_message_text",
-    "seasonal_message_info"
+        "status",
+        "is_leadtime",
+        "is_imported",
+        "distribution_centres",
+        "when_do_i_get_it_text",
+        "when_do_i_get_it_info",
+        "display_seasonal_message",
+        "seasonal_message_text",
+        "seasonal_message_info"
 })
 @Generated("jsonschema2pojo")
-public class StockAvailability implements Serializable
-{
+public class StockAvailability implements Serializable {
 
     @JsonProperty("status")
     public String status;

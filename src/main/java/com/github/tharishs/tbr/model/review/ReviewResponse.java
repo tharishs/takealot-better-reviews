@@ -4,11 +4,17 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Getter
 @Setter
-public class ReviewResponse {
+public class ReviewResponse implements Serializable {
+
+    private static final long serialVersionUID = 6975014948562751841L;
 
     public String title;
     @JsonAlias("star_rating")

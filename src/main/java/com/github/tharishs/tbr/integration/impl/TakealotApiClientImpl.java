@@ -12,6 +12,9 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Component
 public class TakealotApiClientImpl implements TakealotApiClient {
 

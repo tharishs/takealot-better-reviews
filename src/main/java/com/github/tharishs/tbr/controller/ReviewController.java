@@ -2,6 +2,7 @@ package com.github.tharishs.tbr.controller;
 
 import com.github.tharishs.tbr.exception.IntegrationException;
 import com.github.tharishs.tbr.exception.ServiceException;
+import com.github.tharishs.tbr.model.review.KeywordResponse;
 import com.github.tharishs.tbr.model.review.ReviewResponse;
 import com.github.tharishs.tbr.service.ReviewService;
 import com.github.tharishs.tbr.util.StringUtil;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Tharish Sooruth
+ */
 @RestController
 @Slf4j
 @RequestMapping(value = "api/review/v1", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -40,5 +44,19 @@ class ReviewController {
     public ResponseEntity<ReviewResponse> getFilteredReviewsByStar(@RequestParam String takealotUrl, @RequestParam Integer starRating) throws ServiceException, IntegrationException {
         String plid = StringUtil.extractPlid(takealotUrl);
         return ResponseEntity.ok(reviewService.filterReview(plid, starRating));
+    }
+
+    @GetMapping(value = "/get/keywords", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Retrieves all the review keywords for a given product")
+    public ResponseEntity<KeywordResponse> getKeywords(@RequestParam String takealotUrl) throws ServiceException, IntegrationException {
+        String plid = StringUtil.extractPlid(takealotUrl);
+        return ResponseEntity.ok(new KeywordResponse(plid, reviewService.findAllKeywords(plid)));
+    }
+
+    @GetMapping(value = "/search/", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Searches for a review based on a searchTerm")
+    public ResponseEntity<ReviewResponse> searchKeyword(@RequestParam String takealotUrl, String searchTerm) throws ServiceException, IntegrationException {
+        String plid = StringUtil.extractPlid(takealotUrl);
+        return ResponseEntity.ok(reviewService.searchByKeyword(plid, searchTerm));
     }
 }

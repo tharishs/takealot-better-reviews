@@ -7,6 +7,9 @@ import com.github.tharishs.tbr.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {

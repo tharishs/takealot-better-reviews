@@ -14,6 +14,9 @@ import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 
+/**
+ * @author Tharish Sooruth
+ */
 @Slf4j
 @Component
 public class RestIntegrationClient {
